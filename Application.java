@@ -18,13 +18,39 @@ import java.util.Comparator;
  */
 public class Application extends JFrame {
 
+    /**
+     * The car park instance that manages all slots and cars.
+     */
     private final CarPark carPark = new CarPark();
+
+    /**
+     * The panel that displays all parking slots in a grid layout.
+     */
     private final JPanel slotGrid = new JPanel(new GridLayout(0, 8, 8, 8)); // dynamic rows, 8 columns
+
+    /**
+     * The panel containing all control buttons and input options.
+     */
     private final JPanel controlPanel = new JPanel();
+
+    /**
+     * A status bar at the bottom of the window to display feedback messages.
+     */
     private final JLabel statusBar = new JLabel("Welcome to Parking Spot System");
 
+    /**
+     * Color used for staff slots.
+     */
     private final Color staffColor = new Color(30, 60, 150);
+
+    /**
+     * Color used for visitor slots.
+     */
     private final Color visitorColor = new Color(25, 120, 60);
+
+    /**
+     * Border color used to highlight occupied slots.
+     */
     private final Color occupiedBorderColor = new Color(240, 200, 40);
 
     /**
@@ -33,6 +59,11 @@ public class Application extends JFrame {
     private static class SlotButton extends JButton {
         private final String slotId;
 
+        /**
+         * Constructs a new {@code SlotButton} for a given slot ID.
+         *
+         * @param slotId the unique identifier of the slot
+         */
         SlotButton(String slotId) {
             super(slotId);
             this.slotId = slotId;
@@ -41,6 +72,11 @@ public class Application extends JFrame {
             setFont(getFont().deriveFont(Font.BOLD, 12f));
         }
 
+        /**
+         * Returns the slot ID associated with this button.
+         *
+         * @return the slot ID
+         */
         public String getSlotId() {
             return slotId;
         }
@@ -65,7 +101,8 @@ public class Application extends JFrame {
     }
 
     /**
-     * Initialize the controls panel (left side).
+     * Initializes the control panel with buttons for all operations.
+     * Each button is wired to an event handler method.
      */
     private void initControls() {
         controlPanel.setLayout(new GridBagLayout());
@@ -146,7 +183,10 @@ public class Application extends JFrame {
     }
 
     /**
-     * Style a slot button according to type and occupancy.
+     * Styles a slot button according to its type (staff/visitor) and occupancy.
+     *
+     * @param btn  the button to style
+     * @param slot the slot represented by the button
      */
     private void styleSlotButton(SlotButton btn, ParkingSlot slot) {
         boolean staff = slot.isStaffSlot();
@@ -164,7 +204,14 @@ public class Application extends JFrame {
     }
 
     /**
-     * Attach click handlers to a slot button for advanced interaction.
+     * Attaches click handlers to a slot button for interactive actions.
+     * <ul>
+     *     <li>Left-click: park or remove a car</li>
+     *     <li>Right-click: delete unoccupied slot</li>
+     * </ul>
+     *
+     * @param btn  the button to attach handlers to
+     * @param slot the slot represented by the button
      */
     private void attachSlotButtonHandlers(SlotButton btn, ParkingSlot slot) {
         btn.addActionListener(e -> {
@@ -209,6 +256,11 @@ public class Application extends JFrame {
     // Operation handlers
     // =========================
 
+    /**
+     * Handles the "Generate Slots" operation.
+     * Prompts the user for the number of staff and visitor slots,
+     * generates them, and renders the grid.
+     */
     private void onGenerateSlots() {
         JTextField staffField = new JTextField();
         JTextField visitorField = new JTextField();
@@ -243,6 +295,10 @@ public class Application extends JFrame {
         setStatus("Generated " + staffCount + " staff and " + visitorCount + " visitor slots.", true);
     }
 
+    /**
+     * Handles the "Add Slot" operation.
+     * Prompts the user for slot ID and type, validates input, and adds the slot.
+     */
     private void onAddSlot() {
         JTextField idField = new JTextField();
         String[] types = {"Staff", "Visitor"};
@@ -266,6 +322,10 @@ public class Application extends JFrame {
         setStatus("Added slot " + id, true);
     }
 
+    /**
+     * Handles the "Delete Slot" operation.
+     * Prompts the user for a slot ID and deletes it if unoccupied.
+     */
     private void onDeleteSlot() {
         String id = JOptionPane.showInputDialog(this, "Enter Slot ID to delete (e.g., F01):");
         if (id == null) return;
@@ -291,6 +351,11 @@ public class Application extends JFrame {
         }
     }
 
+    /**
+     * Handles the "List All Slots" operation.
+     * Displays all slots in a formatted dialog, including occupancy, car details,
+     * duration, and fee if applicable.
+     */
     private void onListAllSlots() {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%-6s %-8s %-10s %-10s %-20s %-10s%n",
@@ -315,12 +380,20 @@ public class Application extends JFrame {
                 "All Slots", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    /**
+     * Handles the "Delete All Unoccupied Slots" operation.
+     * Removes all empty slots from the car park.
+     */
     private void onDeleteUnoccupiedSlots() {
         carPark.deleteAllUnoccupiedSlots();
         renderSlots();
         setStatus("Deleted all unoccupied slots.", true);
     }
 
+    /**
+     * Handles the "Park Car" operation.
+     * Prompts the user for slot ID and car details, validates input, and parks the car.
+     */
     private void onParkCar() {
         JTextField slotField = new JTextField();
         JTextField regField = new JTextField();
@@ -340,6 +413,16 @@ public class Application extends JFrame {
                 ownerField.getText().trim(), staffChk.isSelected());
     }
 
+    /**
+     * Handles interactive parking to a specific slot initiated from a slot button.
+     * <p>
+     * Displays a dialog pre-associated with the given slot ID to collect car details:
+     * registration number, owner name, and whether it is a staff car. Validates user
+     * confirmation and delegates the actual parking operation to {@code parkCarInternal}.
+     * </p>
+     *
+     * @param slotId the ID of the slot into which the user intends to park a car
+     */
     private void onParkCarToSlot(String slotId) {
         JTextField regField = new JTextField();
         JTextField ownerField = new JTextField();
@@ -358,6 +441,10 @@ public class Application extends JFrame {
                 ownerField.getText().trim(), staffChk.isSelected());
     }
 
+    /**
+     * Handles the "Find Car" operation.
+     * Prompts the user for a registration number and displays the slot and details if found.
+     */
     private void onFindCar() {
         String reg = JOptionPane.showInputDialog(this, "Enter car registration (e.g., T1234):");
         if (reg == null) return;
@@ -382,6 +469,10 @@ public class Application extends JFrame {
         setStatus("Found car " + reg + " in slot " + slot.getSlotId(), true);
     }
 
+    /**
+     * Handles the "Remove Car" operation.
+     * Prompts the user for a registration number and removes the car if found.
+     */
     private void onRemoveCar() {
         String reg = JOptionPane.showInputDialog(this, "Enter car registration (e.g., T1234):");
         if (reg == null) return;
@@ -399,6 +490,10 @@ public class Application extends JFrame {
         }
     }
 
+    /**
+     * Handles the "Exit" operation.
+     * Displays a closing message and terminates the program.
+     */
     private void onExit() {
         JOptionPane.showMessageDialog(this, "Program end!");
         dispose();
@@ -408,12 +503,40 @@ public class Application extends JFrame {
     // Helpers
     // =========================
 
+    /**
+     * Attempts to add a new parking slot to the car park.
+     * <p>
+     * Validates the slot ID format before creating the slot. The slot ID must
+     * consist of one uppercase letter followed by two digits (e.g., "F01").
+     * If the format is valid, a new {@link ParkingSlot} is created and added
+     * to the {@link CarPark}.
+     * </p>
+     *
+     * @param id      the unique identifier for the slot (format: one uppercase letter + two digits)
+     * @param isStaff {@code true} if the slot is for staff, {@code false} if it is for visitors
+     * @return {@code true} if the slot was successfully added,
+     *         {@code false} if the ID format is invalid or the slot already exists
+     */
     private boolean addSlotInternal(String id, boolean isStaff) {
         if (!id.matches("^[A-Z]\\d{2}$")) return false;
         ParkingSlot slot = new ParkingSlot(id, isStaff);
         return carPark.addSlot(slot);
     }
 
+    /**
+     * Attempts to park a car in the specified slot.
+     * <p>
+     * Validates the slot ID and registration format, ensures the slot exists,
+     * checks that the car is not already parked elsewhere, and verifies type
+     * compatibility (staff vs. visitor). If successful, the car is parked,
+     * the time recorded, and the UI updated.
+     * </p>
+     *
+     * @param slotId     the ID of the slot to park in
+     * @param reg        the car's registration number
+     * @param owner      the car owner's name
+     * @param isStaffCar {@code true} if the car belongs to staff, {@code false} if visitor
+     */
     private void parkCarInternal(String slotId, String reg, String owner, boolean isStaffCar) {
         if (!slotId.matches("^[A-Z]\\d{2}$")) {
             warn("Invalid Slot ID format.");
@@ -446,6 +569,14 @@ public class Application extends JFrame {
                 "Park Car", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    /**
+     * Builds a tooltip string for a slot, including car details,
+     * parked time, duration, and fee if occupied.
+     *
+     * @param slot the slot to describe
+     * @param car  the car parked in the slot
+     * @return a formatted tooltip string
+     */
     private String buildSlotTooltip(ParkingSlot slot, Car car) {
         StringBuilder sb = new StringBuilder();
         sb.append(slot.getSlotId()).append(" - ").append(slot.isStaffSlot() ? "Staff" : "Visitor");
@@ -461,6 +592,13 @@ public class Application extends JFrame {
         return "<html>" + sb.toString().replace("\n", "<br/>") + "</html>";
     }
 
+    /**
+     * Formats the duration between two times into hours, minutes, and seconds.
+     *
+     * @param start the start time
+     * @param end   the end time
+     * @return a formatted duration string
+     */
     private String formatDuration(LocalDateTime start, LocalDateTime end) {
         Duration d = Duration.between(start, end);
         long seconds = d.getSeconds();
@@ -470,6 +608,14 @@ public class Application extends JFrame {
         return hours + " hours " + minutes + " minutes " + secs + " seconds";
     }
 
+    /**
+     * Computes the parking fee based on the duration between two times.
+     * Charges $6 per hour, rounding up to the nearest hour (minimum 1 hour).
+     *
+     * @param start the start time
+     * @param end   the end time
+     * @return the computed fee in dollars
+     */
     private int computeFee(LocalDateTime start, LocalDateTime end) {
         Duration d = Duration.between(start, end);
         long seconds = Math.max(d.getSeconds(), 1);
@@ -478,17 +624,32 @@ public class Application extends JFrame {
         return billableHours * 6;
     }
 
+    /**
+     * Updates the status bar with a message.
+     *
+     * @param msg     the message to display
+     * @param success {@code true} for success messages (green), {@code false} for errors (red)
+     */
     private void setStatus(String msg, boolean success) {
         statusBar.setText(msg);
         statusBar.setForeground(success ? new Color(0, 130, 0) : new Color(170, 0, 0));
     }
 
+    /**
+     * Displays a warning message in both the status bar and a dialog box.
+     *
+     * @param msg the warning message
+     */
     private void warn(String msg) {
         setStatus(msg, false);
         JOptionPane.showMessageDialog(this, msg, "Warning", JOptionPane.WARNING_MESSAGE);
     }
 
-    // Entry point for GUI-based Project 2; ensure Car, ParkingSlot, CarPark are present.
+    /**
+     * Entry point for the GUI-based Parking Spot System.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(Application::new);
     }
