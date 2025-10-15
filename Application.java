@@ -16,7 +16,7 @@ import java.util.Comparator;
  * - Validate input and show messages
  * - Delegate business logic to CarPark, ParkingSlot, Car
  * 
- * @author Tung Tran <103432596>
+ * @author Tung Tran 103432596
  * @version JDK 21
  * Class COS70006 Tuesday 18:30
  */

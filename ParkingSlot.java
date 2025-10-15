@@ -1,6 +1,6 @@
 /**
  * Purpose: Used to represent a parking slot.
- * @author Tung Tran <103432596>
+ * @author Tung Tran 103432596
  * @version JDK 21
  * Class COS70006 Tuesday 18:30
  */

@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  * Purpose: Used to represent a whole car park.
- * @author Tung Tran <103432596>
+ * @author Tung Tran 103432596
  * @version JDK 21
  * Class COS70006 Tuesday 18:30
  */
