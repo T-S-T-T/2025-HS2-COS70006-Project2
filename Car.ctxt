@@ -1,17 +1,25 @@
 #BlueJ class context
 comment0.target=Car
+comment0.text=\r\n\ Represents\ a\ car\ that\ can\ be\ parked\ in\ the\ car\ park\ system.\r\n\ <p>\r\n\ Each\ car\ has\ a\ registration\ number,\ an\ owner,\ and\ a\ flag\ indicating\r\n\ whether\ the\ owner\ is\ a\ staff\ member\ or\ a\ visitor.\ When\ parked,\ the\r\n\ time\ of\ parking\ is\ recorded\ for\ advanced\ features\ such\ as\ calculating\r\n\ parking\ duration\ and\ fees.\r\n\ </p>\r\n
 comment1.params=registrationNumber\ owner\ isStaff
 comment1.target=Car(java.lang.String,\ java.lang.String,\ boolean)
+comment1.text=\r\n\ Constructs\ a\ new\ {@code\ Car}\ object\ with\ the\ given\ registration\ number,\ owner,\ and\ staff\ flag.\r\n\r\n\ @param\ registrationNumber\ the\ registration\ number\ of\ the\ car\ (format\:\ one\ uppercase\ letter\ followed\ by\ four\ digits,\ e.g.,\ "T1234")\r\n\ @param\ owner\ \ \ \ \ \ \ \ \ \ \ \ \ \ the\ name\ of\ the\ car's\ owner\r\n\ @param\ isStaff\ \ \ \ \ \ \ \ \ \ \ \ {@code\ true}\ if\ the\ car\ belongs\ to\ a\ staff\ member,\ {@code\ false}\ if\ it\ belongs\ to\ a\ visitor\r\n\ @throws\ IllegalArgumentException\ if\ the\ registration\ number\ does\ not\ match\ the\ required\ format\r\n
 comment2.params=
 comment2.target=java.lang.String\ getRegistrationNumber()
+comment2.text=\r\n\ Returns\ the\ registration\ number\ of\ the\ car.\r\n\r\n\ @return\ the\ registration\ number\r\n
 comment3.params=
 comment3.target=java.lang.String\ getOwner()
+comment3.text=\r\n\ Returns\ the\ name\ of\ the\ car's\ owner.\r\n\r\n\ @return\ the\ owner's\ name\r\n
 comment4.params=
 comment4.target=boolean\ isStaff()
+comment4.text=\r\n\ Indicates\ whether\ the\ car\ belongs\ to\ a\ staff\ member.\r\n\r\n\ @return\ {@code\ true}\ if\ the\ car\ belongs\ to\ a\ staff\ member,\ {@code\ false}\ otherwise\r\n
 comment5.params=
 comment5.target=java.time.LocalDateTime\ getParkedTime()
+comment5.text=\r\n\ Returns\ the\ time\ when\ the\ car\ was\ parked.\r\n\r\n\ @return\ the\ parked\ time,\ or\ {@code\ null}\ if\ the\ car\ has\ not\ been\ parked\r\n
 comment6.params=parkedTime
 comment6.target=void\ setParkedTime(java.time.LocalDateTime)
+comment6.text=\r\n\ Sets\ the\ time\ when\ the\ car\ was\ parked.\r\n\r\n\ @param\ parkedTime\ the\ time\ the\ car\ was\ parked\r\n
 comment7.params=
 comment7.target=java.lang.String\ toString()
+comment7.text=\r\n\ Returns\ a\ string\ representation\ of\ the\ car,\ including\ its\ registration\ number,\r\n\ owner,\ and\ whether\ it\ belongs\ to\ staff\ or\ a\ visitor.\r\n\r\n\ @return\ a\ string\ representation\ of\ the\ car\r\n
 numComments=8

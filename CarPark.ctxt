@@ -1,17 +1,25 @@
 #BlueJ class context
 comment0.target=CarPark
+comment0.text=\r\n\ Represents\ a\ car\ park\ that\ manages\ a\ collection\ of\ parking\ slots.\r\n\ <p>\r\n\ The\ {@code\ CarPark}\ class\ provides\ functionality\ to\ add\ and\ delete\ slots,\r\n\ find\ slots\ or\ cars,\ remove\ cars,\ and\ list\ all\ slots.\ It\ ensures\ that\r\n\ business\ rules\ such\ as\ preventing\ deletion\ of\ occupied\ slots\ are\ enforced.\r\n\ </p>\r\n
 comment1.params=slot
 comment1.target=boolean\ addSlot(ParkingSlot)
+comment1.text=\r\n\ Adds\ a\ new\ parking\ slot\ to\ the\ car\ park.\r\n\r\n\ @param\ slot\ the\ {@link\ ParkingSlot}\ to\ add\r\n\ @return\ {@code\ true}\ if\ the\ slot\ was\ successfully\ added,\r\n\ \ \ \ \ \ \ \ \ {@code\ false}\ if\ a\ slot\ with\ the\ same\ ID\ already\ exists\r\n
 comment2.params=slotId
 comment2.target=boolean\ deleteSlot(java.lang.String)
+comment2.text=\r\n\ Deletes\ a\ parking\ slot\ from\ the\ car\ park\ if\ it\ exists\ and\ is\ unoccupied.\r\n\r\n\ @param\ slotId\ the\ ID\ of\ the\ slot\ to\ delete\r\n\ @return\ {@code\ true}\ if\ the\ slot\ was\ successfully\ deleted,\r\n\ \ \ \ \ \ \ \ \ {@code\ false}\ if\ the\ slot\ does\ not\ exist\ or\ is\ currently\ occupied\r\n
 comment3.params=
 comment3.target=void\ deleteAllUnoccupiedSlots()
+comment3.text=\r\n\ Deletes\ all\ unoccupied\ parking\ slots\ from\ the\ car\ park.\r\n\ Occupied\ slots\ remain\ untouched.\r\n
 comment4.params=slotId
 comment4.target=ParkingSlot\ findSlot(java.lang.String)
+comment4.text=\r\n\ Finds\ a\ parking\ slot\ by\ its\ ID.\r\n\r\n\ @param\ slotId\ the\ ID\ of\ the\ slot\ to\ find\r\n\ @return\ the\ {@link\ ParkingSlot}\ with\ the\ given\ ID,\r\n\ \ \ \ \ \ \ \ \ or\ {@code\ null}\ if\ no\ such\ slot\ exists\r\n
 comment5.params=registrationNumber
 comment5.target=ParkingSlot\ findCar(java.lang.String)
+comment5.text=\r\n\ Finds\ the\ parking\ slot\ where\ a\ car\ with\ the\ given\ registration\ number\ is\ parked.\r\n\r\n\ @param\ registrationNumber\ the\ registration\ number\ of\ the\ car\r\n\ @return\ the\ {@link\ ParkingSlot}\ containing\ the\ car,\r\n\ \ \ \ \ \ \ \ \ or\ {@code\ null}\ if\ the\ car\ is\ not\ found\ in\ any\ slot\r\n
 comment6.params=registrationNumber
 comment6.target=boolean\ removeCar(java.lang.String)
+comment6.text=\r\n\ Removes\ a\ car\ from\ the\ car\ park\ by\ its\ registration\ number.\r\n\r\n\ @param\ registrationNumber\ the\ registration\ number\ of\ the\ car\ to\ remove\r\n\ @return\ {@code\ true}\ if\ the\ car\ was\ successfully\ removed,\r\n\ \ \ \ \ \ \ \ \ {@code\ false}\ if\ the\ car\ was\ not\ found\r\n
 comment7.params=
 comment7.target=java.util.Collection\ listSlots()
+comment7.text=\r\n\ Returns\ a\ collection\ of\ all\ parking\ slots\ in\ the\ car\ park.\r\n\r\n\ @return\ a\ {@link\ Collection}\ of\ {@link\ ParkingSlot}\ objects\r\n
 numComments=8
