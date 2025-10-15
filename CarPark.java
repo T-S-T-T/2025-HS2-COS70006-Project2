@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * Represents a car park that manages a collection of parking slots.
  * <p>
- * The {@code CarPark} class provides functionality to add and delete slots,
+ * The CarPark} class provides functionality to add and delete slots,
  * find slots or cars, remove cars, and list all slots. It ensures that
  * business rules such as preventing deletion of occupied slots are enforced.
  * </p>
@@ -19,8 +19,8 @@ public class CarPark {
      * Adds a new parking slot to the car park.
      *
      * @param slot the {@link ParkingSlot} to add
-     * @return {@code true} if the slot was successfully added,
-     *         {@code false} if a slot with the same ID already exists
+     * @return true} if the slot was successfully added,
+     *         false} if a slot with the same ID already exists
      */
     public boolean addSlot(ParkingSlot slot) {
         if (slots.containsKey(slot.getSlotId())) return false;
@@ -32,8 +32,8 @@ public class CarPark {
      * Deletes a parking slot from the car park if it exists and is unoccupied.
      *
      * @param slotId the ID of the slot to delete
-     * @return {@code true} if the slot was successfully deleted,
-     *         {@code false} if the slot does not exist or is currently occupied
+     * @return true} if the slot was successfully deleted,
+     *         false} if the slot does not exist or is currently occupied
      */
     public boolean deleteSlot(String slotId) {
         ParkingSlot slot = slots.get(slotId);
@@ -55,7 +55,7 @@ public class CarPark {
      *
      * @param slotId the ID of the slot to find
      * @return the {@link ParkingSlot} with the given ID,
-     *         or {@code null} if no such slot exists
+     *         or null} if no such slot exists
      */
     public ParkingSlot findSlot(String slotId) {
         return slots.get(slotId);
@@ -66,7 +66,7 @@ public class CarPark {
      *
      * @param registrationNumber the registration number of the car
      * @return the {@link ParkingSlot} containing the car,
-     *         or {@code null} if the car is not found in any slot
+     *         or null} if the car is not found in any slot
      */
     public ParkingSlot findCar(String registrationNumber) {
         for (ParkingSlot slot : slots.values()) {
@@ -81,8 +81,8 @@ public class CarPark {
      * Removes a car from the car park by its registration number.
      *
      * @param registrationNumber the registration number of the car to remove
-     * @return {@code true} if the car was successfully removed,
-     *         {@code false} if the car was not found
+     * @return true} if the car was successfully removed,
+     *         false} if the car was not found
      */
     public boolean removeCar(String registrationNumber) {
         ParkingSlot slot = findCar(registrationNumber);

@@ -1,35 +1,20 @@
 /**
- * Represents a parking slot in the car park system.
- * <p>
- * Each parking slot has a unique identifier (slot ID), a type indicating
- * whether it is reserved for staff or visitors, and may contain a parked car.
- * The class enforces rules such as allowing only one car per slot and ensuring
- * that staff cars can only be parked in staff slots, and visitor cars in visitor slots.
- * </p>
+ * Purpose: Used to represent a parking slot.
+ * @author Tung Tran <103432596>
+ * @version JDK 21
+ * Class COS70006 Tuesday 18:30
  */
+
 public class ParkingSlot {
-
-    /**
-     * The unique identifier of the parking slot.
-     * Must follow the format: one uppercase letter followed by two digits (e.g., "F01").
-     */
     private String slotId;
-
-    /**
-     * Indicates whether this slot is reserved for staff (true) or visitors (false).
-     */
     private boolean isStaffSlot;
-
-    /**
-     * The car currently parked in this slot, or {@code null} if the slot is empty.
-     */
     private Car parkedCar;
 
     /**
-     * Constructs a new {@code ParkingSlot} with the given slot ID and type.
+     * Constructs a new ParkingSlot with the given slot ID and type.
      *
-     * @param slotId      the unique identifier of the slot (format: one uppercase letter followed by two digits, e.g., "F01")
-     * @param isStaffSlot {@code true} if the slot is for staff, {@code false} if it is for visitors
+     * @param slotId      the unique ID of the slot (format: one uppercase letter followed by two digits, e.g., "F01")
+     * @param isStaffSlot true if the slot is for staff, false if it is for visitors
      * @throws IllegalArgumentException if the slot ID does not match the required format
      */
     public ParkingSlot(String slotId, boolean isStaffSlot) {
@@ -41,7 +26,7 @@ public class ParkingSlot {
     }
 
     /**
-     * Returns the unique identifier of this slot.
+     * Returns the unique ID of this slot.
      *
      * @return the slot ID
      */
@@ -50,9 +35,9 @@ public class ParkingSlot {
     }
 
     /**
-     * Indicates whether this slot is reserved for staff.
+     * Indicates whether this slot is reserved for staff or visitor.
      *
-     * @return {@code true} if this is a staff slot, {@code false} if it is a visitor slot
+     * @return true if this is a staff slot, false if it is a visitor slot
      */
     public boolean isStaffSlot() {
         return isStaffSlot;
@@ -61,7 +46,7 @@ public class ParkingSlot {
     /**
      * Checks whether this slot is currently occupied by a car.
      *
-     * @return {@code true} if a car is parked in this slot, {@code false} otherwise
+     * @return true if a car is parked in this slot, false otherwise
      */
     public boolean isOccupied() {
         return parkedCar != null;
@@ -70,7 +55,7 @@ public class ParkingSlot {
     /**
      * Returns the car currently parked in this slot.
      *
-     * @return the parked {@link Car}, or {@code null} if the slot is empty
+     * @return the parked Car, or null if the slot is empty
      */
     public Car getParkedCar() {
         return parkedCar;
@@ -78,14 +63,13 @@ public class ParkingSlot {
 
     /**
      * Attempts to park a car in this slot.
-     * <p>
+     * 
      * A car can only be parked if the slot is unoccupied and the car type
      * (staff or visitor) matches the slot type. When parked, the current time
-     * is recorded in the car object.
-     * </p>
+     * is recorded in the Car object.
      *
      * @param car the {@link Car} to park
-     * @return {@code true} if the car was successfully parked, {@code false} otherwise
+     * @return true if the car was successfully parked, false if not
      */
     public boolean parkCar(Car car) {
         if (isOccupied()) return false;
@@ -98,7 +82,7 @@ public class ParkingSlot {
     /**
      * Removes the car from this slot, if one is parked.
      *
-     * @return {@code true} if a car was successfully removed, {@code false} if the slot was already empty
+     * @return true if a car was successfully removed, false if the slot was already empty
      */
     public boolean removeCar() {
         if (!isOccupied()) return false;

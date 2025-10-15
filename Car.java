@@ -34,11 +34,11 @@ public class Car {
     private LocalDateTime parkedTime;
 
     /**
-     * Constructs a new {@code Car} object with the given registration number, owner, and staff flag.
+     * Constructs a new Car} object with the given registration number, owner, and staff flag.
      *
      * @param registrationNumber the registration number of the car (format: one uppercase letter followed by four digits, e.g., "T1234")
      * @param owner              the name of the car's owner
-     * @param isStaff            {@code true} if the car belongs to a staff member, {@code false} if it belongs to a visitor
+     * @param isStaff            true} if the car belongs to a staff member, false} if it belongs to a visitor
      * @throws IllegalArgumentException if the registration number does not match the required format
      */
     public Car(String registrationNumber, String owner, boolean isStaff) {
@@ -71,7 +71,7 @@ public class Car {
     /**
      * Indicates whether the car belongs to a staff member.
      *
-     * @return {@code true} if the car belongs to a staff member, {@code false} otherwise
+     * @return true} if the car belongs to a staff member, false} otherwise
      */
     public boolean isStaff() {
         return isStaff;
@@ -80,7 +80,7 @@ public class Car {
     /**
      * Returns the time when the car was parked.
      *
-     * @return the parked time, or {@code null} if the car has not been parked
+     * @return the parked time, or null} if the car has not been parked
      */
     public LocalDateTime getParkedTime() {
         return parkedTime;
