@@ -256,14 +256,15 @@ public class Application extends JFrame {
         });
     }
 
-    // =========================
     // Operation handlers
-    // =========================
 
     /**
      * Handles the "Generate Slots" operation.
+     * <p>
      * Prompts the user for the number of staff and visitor slots,
      * generates them, and renders the grid.
+     * Delegates the actual operation to addSlotInternal.
+     * </p>
      */
     private void onGenerateSlots() {
         JTextField staffField = new JTextField();
@@ -422,7 +423,7 @@ public class Application extends JFrame {
      * <p>
      * Displays a dialog pre-associated with the given slot ID to collect car details:
      * registration number, owner name, and whether it is a staff car. Validates user
-     * confirmation and delegates the actual parking operation to parkCarInternal}.
+     * confirmation and delegates the actual parking operation to parkCarInternal.
      * </p>
      *
      * @param slotId the ID of the slot into which the user intends to park a car
