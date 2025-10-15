@@ -22,44 +22,19 @@ import java.util.Comparator;
  */
 public class Application extends JFrame {
 
-    /**
-     * The car park instance that manages all slots and cars.
-     */
+    // init new car park
     private final CarPark carPark = new CarPark();
 
-    /**
-     * The panel that displays all parking slots in a grid layout.
-     */
-    private final JPanel slotGrid = new JPanel(new GridLayout(0, 8, 8, 8)); // dynamic rows, 8 columns
-
-    /**
-     * The panel containing all control buttons and input options.
-     */
+    // init GUI window
+    private final JPanel slotGrid = new JPanel(new GridLayout(0, 8, 8, 8));
     private final JPanel controlPanel = new JPanel();
-
-    /**
-     * A status bar at the bottom of the window to display feedback messages.
-     */
     private final JLabel statusBar = new JLabel("Welcome to Parking Spot System");
 
-    /**
-     * Color used for staff slots.
-     */
+    // select color for slot type and occupancy
     private final Color staffColor = new Color(30, 60, 150);
-
-    /**
-     * Color used for visitor slots.
-     */
     private final Color visitorColor = new Color(25, 120, 60);
-
-    /**
-     * Border color used to highlight occupied slots.
-     */
     private final Color occupiedBorderColor = new Color(240, 200, 40);
 
-    /**
-     * Custom button representing a parking slot in the grid.
-     */
     private static class SlotButton extends JButton {
         private final String slotId;
 
