@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=CarPark
-comment0.text=\r\n\ Purpose\:\ Used\ to\ represent\ a\ whole\ car\ park.\r\n\ @author\ Tung\ Tran\ <103432596>\r\n\ @version\ JDK\ 21\r\n\ Class\ COS70006\ Tuesday\ 18\:30\r\n
+comment0.text=\r\n\ Purpose\:\ Used\ to\ represent\ a\ whole\ car\ park.\r\n\ @author\ Tung\ Tran\ 103432596\r\n\ @version\ JDK\ 21\r\n\ Class\ COS70006\ Tuesday\ 18\:30\r\n
 comment1.params=slot
 comment1.target=boolean\ addSlot(ParkingSlot)
 comment1.text=\r\n\ Adds\ a\ new\ parking\ slot\ to\ the\ car\ park.\r\n\r\n\ @param\ slot\ the\ ParkingSlot\ to\ add\r\n\ @return\ true\ if\ the\ slot\ was\ successfully\ added,\ false\ if\ a\ slot\ with\ the\ same\ ID\ already\ exists\r\n

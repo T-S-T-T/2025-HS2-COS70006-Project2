@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Application
-comment0.text=\r\n\ Main\ GUI\ application\ for\ the\ Parking\ Spot\ System.\r\n\ Responsibilities\:\r\n\ -\ Render\ slots\ as\ interactive\ buttons\r\n\ -\ Provide\ operations\ via\ controls\r\n\ -\ Validate\ input\ and\ show\ messages\r\n\ -\ Delegate\ business\ logic\ to\ CarPark,\ ParkingSlot,\ Car\r\n\ \r\n\ @author\ Tung\ Tran\ <103432596>\r\n\ @version\ JDK\ 21\r\n\ Class\ COS70006\ Tuesday\ 18\:30\r\n
+comment0.text=\r\n\ Main\ GUI\ application\ for\ the\ Parking\ Spot\ System.\r\n\ Responsibilities\:\r\n\ -\ Render\ slots\ as\ interactive\ buttons\r\n\ -\ Provide\ operations\ via\ controls\r\n\ -\ Validate\ input\ and\ show\ messages\r\n\ -\ Delegate\ business\ logic\ to\ CarPark,\ ParkingSlot,\ Car\r\n\ \r\n\ @author\ Tung\ Tran\ 103432596\r\n\ @version\ JDK\ 21\r\n\ Class\ COS70006\ Tuesday\ 18\:30\r\n
 comment1.params=
 comment1.target=Application()
 comment1.text=\r\n\ Create\ and\ show\ the\ application\ window.\r\n
@@ -60,7 +60,7 @@ comment4.target=void\ styleSlotButton(Application.SlotButton,\ ParkingSlot)
 comment4.text=\r\n\ Styles\ a\ slot\ button\ according\ to\ its\ type\ (staff/visitor)\ and\ occupancy.\r\n\r\n\ @param\ btn\ \ the\ button\ to\ style\r\n\ @param\ slot\ the\ slot\ represented\ by\ the\ button\r\n
 comment5.params=btn\ slot
 comment5.target=void\ attachSlotButtonHandlers(Application.SlotButton,\ ParkingSlot)
-comment5.text=\r\n\ Attaches\ click\ handlers\ to\ a\ slot\ button\ for\ interactive\ actions.\r\n\ <ul>\r\n\ \ \ \ \ <li>Left-click\:\ park\ or\ remove\ a\ car</li>\r\n\ \ \ \ \ <li>Right-click\:\ delete\ unoccupied\ slot</li>\r\n\ </ul>\r\n\r\n\ @param\ btn\ \ the\ button\ to\ attach\ handlers\ to\r\n\ @param\ slot\ the\ slot\ represented\ by\ the\ button\r\n
+comment5.text=\r\n\ Attaches\ click\ handlers\ to\ a\ slot\ button\ for\ interactive\ actions.\r\n\ \r\n\ Left-click\:\ park\ or\ remove\ a\ car\r\n\ Right-click\:\ delete\ unoccupied\ slot\r\n\r\n\ @param\ btn\ \ the\ button\ to\ attach\ handlers\ to\r\n\ @param\ slot\ the\ slot\ represented\ by\ the\ button\r\n
 comment6.params=e
 comment6.target=void\ mousePressed(java.awt.event.MouseEvent)
 comment7.params=

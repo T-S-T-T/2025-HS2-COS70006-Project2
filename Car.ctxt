@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Car
-comment0.text=\r\n\ Purpose\:\ Used\ to\ represent\ a\ car.\r\n\ @author\ Tung\ Tran\ <103432596>\r\n\ @version\ JDK\ 21\r\n\ Class\ COS70006\ Tuesday\ 18\:30\r\n
+comment0.text=\r\n\ Purpose\:\ Used\ to\ represent\ a\ car.\r\n\ @author\ Tung\ Tran\ 103432596\r\n\ @version\ JDK\ 21\r\n\ Class\ COS70006\ Tuesday\ 18\:30\r\n
 comment1.params=registrationNumber\ owner\ isStaff
 comment1.target=Car(java.lang.String,\ java.lang.String,\ boolean)
 comment1.text=\r\n\ Constructs\ a\ new\ Car\ object\ with\ the\ given\ registration\ number,\ owner,\ and\ staff\ flag.\r\n\r\n\ @param\ registrationNumber\ the\ registration\ number\ of\ the\ car\ (format\:\ one\ uppercase\ letter\ followed\ by\ four\ digits,\ e.g.,\ "T1234")\r\n\ @param\ owner\ \ \ \ \ \ \ \ \ \ \ \ \ \ the\ name\ of\ the\ car's\ owner\r\n\ @param\ isStaff\ \ \ \ \ \ \ \ \ \ \ \ true\ if\ the\ car\ belongs\ to\ a\ staff\ member,\ false\ if\ it\ belongs\ to\ a\ visitor\r\n\ @throws\ IllegalArgumentException\ if\ the\ registration\ number\ does\ not\ match\ the\ required\ format\r\n

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ParkingSlot
-comment0.text=\r\n\ Purpose\:\ Used\ to\ represent\ a\ parking\ slot.\r\n\ @author\ Tung\ Tran\ <103432596>\r\n\ @version\ JDK\ 21\r\n\ Class\ COS70006\ Tuesday\ 18\:30\r\n
+comment0.text=\r\n\ Purpose\:\ Used\ to\ represent\ a\ parking\ slot.\r\n\ @author\ Tung\ Tran\ 103432596\r\n\ @version\ JDK\ 21\r\n\ Class\ COS70006\ Tuesday\ 18\:30\r\n
 comment1.params=slotId\ isStaffSlot
 comment1.target=ParkingSlot(java.lang.String,\ boolean)
 comment1.text=\r\n\ Constructs\ a\ new\ ParkingSlot\ with\ the\ given\ slot\ ID\ and\ type.\r\n\r\n\ @param\ slotId\ \ \ \ \ \ the\ unique\ ID\ of\ the\ slot\ (format\:\ one\ uppercase\ letter\ followed\ by\ two\ digits,\ e.g.,\ "F01")\r\n\ @param\ isStaffSlot\ true\ if\ the\ slot\ is\ for\ staff,\ false\ if\ it\ is\ for\ visitors\r\n\ @throws\ IllegalArgumentException\ if\ the\ slot\ ID\ does\ not\ match\ the\ required\ format\r\n

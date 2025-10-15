@@ -209,10 +209,9 @@ public class Application extends JFrame {
 
     /**
      * Attaches click handlers to a slot button for interactive actions.
-     * <ul>
-     *     <li>Left-click: park or remove a car</li>
-     *     <li>Right-click: delete unoccupied slot</li>
-     * </ul>
+     * 
+     * Left-click: park or remove a car
+     * Right-click: delete unoccupied slot
      *
      * @param btn  the button to attach handlers to
      * @param slot the slot represented by the button
@@ -260,11 +259,10 @@ public class Application extends JFrame {
 
     /**
      * Handles the "Generate Slots" operation.
-     * <p>
+     * 
      * Prompts the user for the number of staff and visitor slots,
      * generates them, and renders the grid.
      * Delegates the actual operation to addSlotInternal.
-     * </p>
      */
     private void onGenerateSlots() {
         JTextField staffField = new JTextField();
@@ -420,11 +418,10 @@ public class Application extends JFrame {
 
     /**
      * Handles interactive parking to a specific slot initiated from a slot button.
-     * <p>
+     * 
      * Displays a dialog pre-associated with the given slot ID to collect car details:
      * registration number, owner name, and whether it is a staff car. Validates user
      * confirmation and delegates the actual parking operation to parkCarInternal.
-     * </p>
      *
      * @param slotId the ID of the slot into which the user intends to park a car
      */
@@ -522,12 +519,11 @@ public class Application extends JFrame {
 
     /**
      * Attempts to park a car in the specified slot.
-     * <p>
+     * 
      * Validates the slot ID and registration format, ensures the slot exists,
      * checks that the car is not already parked elsewhere, and verifies type
      * compatibility (staff vs. visitor). If successful, the car is parked,
      * the time recorded, and the UI updated.
-     * </p>
      *
      * @param slotId     the ID of the slot to park in
      * @param reg        the car's registration number
