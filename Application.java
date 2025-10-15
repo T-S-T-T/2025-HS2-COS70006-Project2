@@ -504,23 +504,15 @@ public class Application extends JFrame {
         dispose();
     }
 
-    // =========================
     // Helpers
-    // =========================
 
     /**
      * Attempts to add a new parking slot to the car park.
-     * <p>
-     * Validates the slot ID format before creating the slot. The slot ID must
-     * consist of one uppercase letter followed by two digits (e.g., "F01").
-     * If the format is valid, a new ParkingSlot} is created and added
-     * to the CarPark}.
-     * </p>
+     * If the format is valid, a new ParkingSlot is created and added
      *
      * @param id      the unique identifier for the slot (format: one uppercase letter + two digits)
-     * @param isStaff true} if the slot is for staff, false} if it is for visitors
-     * @return true} if the slot was successfully added,
-     *         false} if the ID format is invalid or the slot already exists
+     * @param isStaff true if the slot is for staff, false if it is for visitors
+     * @return true if the slot was successfully added, false if the ID format is invalid or the slot already exists
      */
     private boolean addSlotInternal(String id, boolean isStaff) {
         if (!id.matches("^[A-Z]\\d{2}$")) return false;
@@ -540,7 +532,7 @@ public class Application extends JFrame {
      * @param slotId     the ID of the slot to park in
      * @param reg        the car's registration number
      * @param owner      the car owner's name
-     * @param isStaffCar true} if the car belongs to staff, false} if visitor
+     * @param isStaffCar true if the car belongs to staff, false if visitor
      */
     private void parkCarInternal(String slotId, String reg, String owner, boolean isStaffCar) {
         if (!slotId.matches("^[A-Z]\\d{2}$")) {
@@ -633,7 +625,7 @@ public class Application extends JFrame {
      * Updates the status bar with a message.
      *
      * @param msg     the message to display
-     * @param success true} for success messages (green), false} for errors (red)
+     * @param success true for success messages (green), false for errors (red)
      */
     private void setStatus(String msg, boolean success) {
         statusBar.setText(msg);
