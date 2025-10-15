@@ -68,7 +68,7 @@ public class ParkingSlot {
      * (staff or visitor) matches the slot type. When parked, the current time
      * is recorded in the Car object.
      *
-     * @param car the {@link Car} to park
+     * @param car the Car to park
      * @return true if the car was successfully parked, false if not
      */
     public boolean parkCar(Car car) {

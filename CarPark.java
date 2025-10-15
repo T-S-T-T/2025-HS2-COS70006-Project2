@@ -1,12 +1,10 @@
 import java.util.*;
 
 /**
- * Represents a car park that manages a collection of parking slots.
- * <p>
- * The CarPark} class provides functionality to add and delete slots,
- * find slots or cars, remove cars, and list all slots. It ensures that
- * business rules such as preventing deletion of occupied slots are enforced.
- * </p>
+ * Purpose: Used to represent a whole car park.
+ * @author Tung Tran <103432596>
+ * @version JDK 21
+ * Class COS70006 Tuesday 18:30
  */
 public class CarPark {
 
@@ -18,9 +16,8 @@ public class CarPark {
     /**
      * Adds a new parking slot to the car park.
      *
-     * @param slot the {@link ParkingSlot} to add
-     * @return true} if the slot was successfully added,
-     *         false} if a slot with the same ID already exists
+     * @param slot the ParkingSlot to add
+     * @return true if the slot was successfully added, false if a slot with the same ID already exists
      */
     public boolean addSlot(ParkingSlot slot) {
         if (slots.containsKey(slot.getSlotId())) return false;
@@ -32,8 +29,7 @@ public class CarPark {
      * Deletes a parking slot from the car park if it exists and is unoccupied.
      *
      * @param slotId the ID of the slot to delete
-     * @return true} if the slot was successfully deleted,
-     *         false} if the slot does not exist or is currently occupied
+     * @return true if the slot was successfully deleted, false} if the slot does not exist or is currently occupied
      */
     public boolean deleteSlot(String slotId) {
         ParkingSlot slot = slots.get(slotId);
@@ -54,8 +50,7 @@ public class CarPark {
      * Finds a parking slot by its ID.
      *
      * @param slotId the ID of the slot to find
-     * @return the {@link ParkingSlot} with the given ID,
-     *         or null} if no such slot exists
+     * @return the ParkingSlot with the given ID, or null if no such slot exists
      */
     public ParkingSlot findSlot(String slotId) {
         return slots.get(slotId);
@@ -65,8 +60,7 @@ public class CarPark {
      * Finds the parking slot where a car with the given registration number is parked.
      *
      * @param registrationNumber the registration number of the car
-     * @return the {@link ParkingSlot} containing the car,
-     *         or null} if the car is not found in any slot
+     * @return the ParkingSlot containing the car, or null if the car is not found in any slot
      */
     public ParkingSlot findCar(String registrationNumber) {
         for (ParkingSlot slot : slots.values()) {
@@ -81,8 +75,7 @@ public class CarPark {
      * Removes a car from the car park by its registration number.
      *
      * @param registrationNumber the registration number of the car to remove
-     * @return true} if the car was successfully removed,
-     *         false} if the car was not found
+     * @return true if the car was successfully removed, false if the car was not found
      */
     public boolean removeCar(String registrationNumber) {
         ParkingSlot slot = findCar(registrationNumber);
@@ -93,7 +86,7 @@ public class CarPark {
     /**
      * Returns a collection of all parking slots in the car park.
      *
-     * @return a {@link Collection} of {@link ParkingSlot} objects
+     * @return a Collection of ParkingSlot objects
      */
     public Collection<ParkingSlot> listSlots() {
         return slots.values();

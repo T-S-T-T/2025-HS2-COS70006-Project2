@@ -508,8 +508,8 @@ public class Application extends JFrame {
      * <p>
      * Validates the slot ID format before creating the slot. The slot ID must
      * consist of one uppercase letter followed by two digits (e.g., "F01").
-     * If the format is valid, a new {@link ParkingSlot} is created and added
-     * to the {@link CarPark}.
+     * If the format is valid, a new ParkingSlot} is created and added
+     * to the CarPark}.
      * </p>
      *
      * @param id      the unique identifier for the slot (format: one uppercase letter + two digits)
