@@ -15,6 +15,10 @@ import java.util.Comparator;
  * - Provide operations via controls
  * - Validate input and show messages
  * - Delegate business logic to CarPark, ParkingSlot, Car
+ * 
+ * @author Tung Tran <103432596>
+ * @version JDK 21
+ * Class COS70006 Tuesday 18:30
  */
 public class Application extends JFrame {
 
@@ -60,7 +64,7 @@ public class Application extends JFrame {
         private final String slotId;
 
         /**
-         * Constructs a new SlotButton} for a given slot ID.
+         * Constructs a new SlotButton for a given slot ID.
          *
          * @param slotId the unique identifier of the slot
          */
