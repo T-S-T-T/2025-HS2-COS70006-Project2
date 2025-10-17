@@ -230,7 +230,6 @@ public class Application extends JFrame {
         });
     }
 
-    // Operation handlers
 
     /**
      * Handles the "Generate Slots" operation.
@@ -476,7 +475,6 @@ public class Application extends JFrame {
         dispose();
     }
 
-    // Helpers
 
     /**
      * Attempts to add a new parking slot to the car park.
