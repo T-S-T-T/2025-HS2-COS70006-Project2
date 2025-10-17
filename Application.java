@@ -145,7 +145,7 @@ public class Application extends JFrame {
     private void renderSlots() {
         slotGrid.removeAll();
 
-        // Sort by ID for consistent layout
+        // Sort by ID
         Collection<ParkingSlot> slots = carPark.listSlots();
         java.util.List<ParkingSlot> sorted = new ArrayList<>(slots);
         sorted.sort(Comparator.comparing(ParkingSlot::getSlotId));
@@ -517,7 +517,6 @@ public class Application extends JFrame {
             warn("Slot " + slotId + " not found.");
             return;
         }
-        // ensure car not already parked
         if (carPark.findCar(reg) != null) {
             warn("Car " + reg + " is already parked in another slot.");
             return;
